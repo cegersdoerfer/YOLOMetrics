@@ -5,7 +5,7 @@ This code was created with intetion to be used for Darknet YoloV3 implemented he
 
 # How to run
 ```
-python process_yolo.py <"test_images_file.txt"> <"Predictions_file.json">
+python calculate_map.py <"test_images_file.txt"> <"Predictions_file.json">
 ```
 In the above line of code, replace the two file names with your test and prediction files.
 
@@ -52,7 +52,7 @@ Format for predictions json file is as follows:
 ```
 # Argument options
 ```
-python process_yolo.py test.txt out.json -h 
+python calculate_map.py test.txt out.json -h 
 ```
 ```
 positional arguments:
@@ -97,7 +97,7 @@ Output is from a pill detection model with 5 pill classes
 
 Input:
 ```
-python process_yolo.py test.txt out.json -o pred_imgs  -m giou --black_labels
+python calculate_map.py test.txt out.json -o pred_imgs  -m giou --black_labels
 ```
 Output:
 ```
@@ -109,7 +109,7 @@ Example from pred_imgs folder after above run:
 
 Input:
 ```
-python process_yolo.py test.txt out.json -o pred_imgs  -m diou --use_f1
+python calculate_map.py test.txt out.json -o pred_imgs  -m diou --use_f1
 ```
 Output:
 ```
