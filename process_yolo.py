@@ -449,20 +449,20 @@ def show_predictions(precision_dict, args):
 				if not args.hide_labels:
 					if args.black_labels:
 						cv2.rectangle(img, 
-									(int(IMG_X*value[1][i][1]), int(IMG_Y*value[1][i][2])), 
-									(int(IMG_X*value[1][i][3]),int(IMG_Y*value[1][i][4])), 
-									color_encodings['label'])
+                                                              (int(IMG_X*value[1][i][1]), int(IMG_Y*value[1][i][2])),
+                                                              (int(IMG_X*value[1][i][3]),int(IMG_Y*value[1][i][4])),
+                                                              color_encodings['label'])
 					else:
-						cv2.rectangle(img, 
-									(int(IMG_X*value[1][i][1]),int(IMG_Y*value[1][i][2])), 
-									(int(IMG_X*value[1][i][3]),int(IMG_Y*value[1][i][4])), 
-									color_encodings[value[1][i][0]])
+						cv2.rectangle(img,
+                                                              (int(IMG_X*value[1][i][1]),int(IMG_Y*value[1][i][2])),
+                                                              (int(IMG_X*value[1][i][3]),int(IMG_Y*value[1][i][4])),
+                                                              color_encodings[value[1][i][0]])
 			if i < len(value[0]):
 				if not args.hide_preds:
-					cv2.rectangle(img, 
-								(int(IMG_X*value[0][i][1]),int(IMG_Y*value[0][i][2])), 
-								(int(IMG_X*value[0][i][3]),int(IMG_Y*value[0][i][4])), 
-								color_encodings[value[0][i][0]])
+					cv2.rectangle(img,
+                                                      (int(IMG_X*value[0][i][1]),int(IMG_Y*value[0][i][2])),
+                                                      (int(IMG_X*value[0][i][3]),int(IMG_Y*value[0][i][4])),
+                                                      color_encodings[value[0][i][0]])
 
 		legend_label = 'Color legend: '
 		cv2.putText(img, text=legend_label, org=(int(IMG_X*.75),int(IMG_Y*0.06)),
