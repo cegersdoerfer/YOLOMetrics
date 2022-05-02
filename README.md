@@ -52,6 +52,9 @@ Format for predictions json file is as follows:
 ```
 # Argument options
 ```
+python process_yolo.py test.txt out.json -h 
+```
+```
 positional arguments:
   label_files           Txt file containing paths to labelled images (such as
                         test.txt used for darknet)
