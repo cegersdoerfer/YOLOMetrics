@@ -106,7 +106,7 @@ Example from pred_imgs folder after above run:
 
 Input:
 ```
-python process_yolo.py test.txt out.json -o pred_imgs  -m diou 
+python process_yolo.py test.txt out.json -o pred_imgs  -m diou --use_f1
 ```
 Output:
 ```
@@ -114,7 +114,8 @@ MAP:  0.952
 ```
 Example from pred_imgs folder after above run:
 
-![20220326_113330](https://user-images.githubusercontent.com/29511758/166291754-8a354f45-edd4-4a8e-bd75-8df1d976a83a.jpg)
+![20220326_113330](https://user-images.githubusercontent.com/29511758/166292242-bfa331c2-3b7b-434b-80db-e264e73d916b.jpg)
+
 
 
 
