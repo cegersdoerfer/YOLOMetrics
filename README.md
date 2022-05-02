@@ -11,9 +11,9 @@ In the above line of code, replace the two file names with your test and predict
 
 Format for test image txt file is as follows:
 ```
-PATH/TO/TEST/IMAGE_1
-PATH/TO/TEST/IMAGE_2
-PATH/TO/TEST/IMAGE_3
+PATH/TO/TEST/IMAGE_1.jpg
+PATH/TO/TEST/IMAGE_2.jpg
+PATH/TO/TEST/IMAGE_3.jpg
 ...
 ```
 Format for predictions json file is as follows:
