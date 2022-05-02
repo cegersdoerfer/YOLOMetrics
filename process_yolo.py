@@ -478,7 +478,7 @@ def show_predictions(precision_dict, args):
 		dy = .025
 		for i, line in enumerate(label_string.split('\n')[:-1]):
 			y = y0 + (i * dy)
-			if 'label' in line:
+			if 'label' in line and args.black_labels:
 				cv2.putText(img, text=line+'|||||||', org=(int(IMG_X*.75),int(IMG_Y*y)),
 	            	fontFace= cv2.FONT_HERSHEY_SIMPLEX, fontScale=.3, color=(0,0,0),
 	            	thickness=1, lineType=cv2.LINE_AA)
