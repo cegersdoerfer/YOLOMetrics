@@ -4,53 +4,65 @@ Calculate mean average precision (mAP) values for multi-object detection models 
 This code was created with intetion to be used for Darknet YoloV3 implemented here: https://github.com/AlexeyAB/darknet. With some edits it could easily be adapted to other formats.
 
 # How to run
-```
-python calculate_map.py <"test_images_file.txt"> <"Predictions_file.json">
-```
-In the above line of code, replace the two file names with your test and prediction files.
+1. Edit the class_colors file to match the amount of classes in your model and specify the desired color for each.
+   
+   Ex. My model had 5 classes so the class_colors.txt looks like this:
+   ```
+   0 #FF0000
+   1 #00FF00
+   2 #CEFF00
+   3 #00FFB0
+   4 #00C3FF
+   label #000000
+   ```
+2. Run the calculate_map.py file
+   ```
+   python calculate_map.py <"test_images_file.txt"> <"Predictions_file.json">
+   ```
+   In the above line of code, replace the two file names with your test and prediction files.
 
-Format for test image txt file is as follows:
-```
-PATH/TO/TEST/IMAGE_1.jpg
-PATH/TO/TEST/IMAGE_2.jpg
-PATH/TO/TEST/IMAGE_3.jpg
-...
-```
-Format for predictions json file is as follows:
-```
-[
- {
-  "frame_id": int,
-  "filename": path_to_img_file,
-  "objects": [
-              {
-               "class_id": int class id, 
-               "name": str class name, 
-               "relative_coordinates": {
-                                        "center_x": Float between 0 and 1, 
-                                        "center_y": Float between 0 and 1, 
-                                        "width": Float between 0 and 1, 
-                                        "height": Float between 0 and 1
-                                       }, 
-               "confidence": Float between 0 and 1
-              },<img width="447" alt="Screen Shot 2022-05-05 at 1 04 13 AM" src="https://user-images.githubusercontent.com/29511758/166866145-c2632976-c49a-4bba-8da1-2c07a56c2024.png">
+   Format for test image txt file is as follows:
+   ```
+   PATH/TO/TEST/IMAGE_1.jpg
+   PATH/TO/TEST/IMAGE_2.jpg
+   PATH/TO/TEST/IMAGE_3.jpg
+   ...
+   ```
+   Format for predictions json file is as follows:
+   ```
+   [
+    {
+     "frame_id": int,
+     "filename": path_to_img_file,
+     "objects": [
+                 {
+                  "class_id": int class id, 
+                  "name": str class name, 
+                  "relative_coordinates": {
+                                           "center_x": Float between 0 and 1, 
+                                           "center_y": Float between 0 and 1, 
+                                           "width": Float between 0 and 1, 
+                                           "height": Float between 0 and 1
+                                          }, 
+                  "confidence": Float between 0 and 1
+                 },<img width="447" alt="Screen Shot 2022-05-05 at 1 04 13 AM" src="https://user-images.githubusercontent.com/29511758/166866145-c2632976-c49a-4bba-8da1-2c07a56c2024.png">
 
-              {
-               "class_id": int class id, 
-               "name": str class name, 
-               "relative_coordinates": {
-                                        "center_x": Float between 0 and 1, 
-                                        "center_y": Float between 0 and 1, 
-                                        "width": Float between 0 and 1, 
-                                        "height": Float between 0 and 1
-                                       }, 
-               "confidence": Float between 0 and 1
-             }
-            ]
- },
-...
-]
-```
+                 {
+                  "class_id": int class id, 
+                  "name": str class name, 
+                  "relative_coordinates": {
+                                           "center_x": Float between 0 and 1, 
+                                           "center_y": Float between 0 and 1, 
+                                           "width": Float between 0 and 1, 
+                                           "height": Float between 0 and 1
+                                          }, 
+                  "confidence": Float between 0 and 1
+                }
+               ]
+    },
+   ...
+   ]
+   ```
 # Argument options
 ```
 python calculate_map.py test.txt out.json -h 
