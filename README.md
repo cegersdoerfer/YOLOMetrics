@@ -120,6 +120,20 @@ Example from pred_imgs folder after above run:
 ![20220326_113330](https://user-images.githubusercontent.com/29511758/166292242-bfa331c2-3b7b-434b-80db-e264e73d916b.jpg)
 
 
+# IoU algorithms
+As shown in the argument options, there are multiple types of iou variations available to choose from. Here is a brief explanation of each of these with the associated papers:
+
+## IoU
+Regular Intersection over Union is the most basic form of IoU algorithm. It simply takes the intersection area of two bounding boxes and divides that by the union area of the bounding boxes.
+
+<img width="500" alt="Screen Shot 2022-05-04 at 4 50 48 PM" src="https://user-images.githubusercontent.com/29511758/166823775-55a1e18d-3622-4ed0-b908-a631b1dda207.png">
+
+## GIoU
+Generalized Intersection over Union incorporates the area of the smallest rectangle which encloses both bounding boxes. The calculation breaks down to finding the regular IoU and subtracting the ratio of the smallest closure area excluding union and the smallest closure area.
+Here's a great link to further explore this metric: https://giou.stanford.edu/
+
+<img width="500" alt="giou_img" src="https://user-images.githubusercontent.com/29511758/166825904-764919ad-a50b-4796-9cda-55ffa2983812.jpeg">
+
 
 
 
